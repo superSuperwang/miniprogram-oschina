@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+
+ <view class="inner-container">
+ <view class="top">
+ <image class="image-div" src=""></image>
+ <view class="name-infor">
+ <view>lixiao</view>
+ <view>22</view>
+ </view>
+ </view>
+  <view>wowowoowo</view>
+   <view class="footer">
+
+   </view>
+ </view>
+
+</view>
