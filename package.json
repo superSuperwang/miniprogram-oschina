@@ -1,0 +1,23 @@
+{
+  "name": "miniprogram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "dayjs": "^1.8.28"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superSuperwang/miniprogram-oschina.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/superSuperwang/miniprogram-oschina/issues"
+  },
+  "homepage": "https://github.com/superSuperwang/miniprogram-oschina#readme"
+}

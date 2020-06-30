@@ -1,0 +1,10 @@
+module.exports =  {
+  dateFilter:function(date){
+   var arr=date.split('')
+   arr.splice(4,0,'年')
+   arr.splice(7,0,'月')
+   arr.push('日')
+   var newDate=arr.join('')
+   return newDate
+  }
+}

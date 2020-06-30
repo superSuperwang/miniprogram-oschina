@@ -1,18 +1,38 @@
 <!--index.wxml-->
+<wxs module="filter" src="../../filter/filters.wxs"></wxs>
+<scroll-view scroll-y="true" style="height: {{windowHeight}}px;" bindscrolltolower="pullUpLoad">
 <view class="container">
-
- <view class="inner-container">
- <view class="top">
- <image class="image-div" src=""></image>
- <view class="name-infor">
- <view>lixiao</view>
- <view>22</view>
- </view>
- </view>
-  <view>wowowoowo</view>
-   <view class="footer">
-
+<!-- 搜索框 -->
+  <input class="weui-input" placeholder-class="placeholder" placeholder="搜索"/>
+<!-- 轮播图 -->
+       <swiper autoplay="true" circular="true" class="swiper-style">
+          <swiper-item wx:for="{{swiperList}}" wx:key="*this" bindtap="lookDetail">
+            <image  mode="aspectFill" src="{{item.image}}"></image>
+            <view class="swiper-title">
+             <view class="title">{{item.title}}</view>
+             <view class="author">{{item.hint}}</view>
+            </view>
+          </swiper-item>
+      </swiper>
+<!-- 新闻列表 -->
+ <view class="inner-container" wx:for="{{listData}}" wx:key="*this">
+   <view>
+    <view class="title">{{item.title}}</view>
+    <view class="author">{{item.hint}}</view>
    </view>
+   <image  class="image-style" mode="aspectFill" src="{{item.images[0]}}"></image>
  </view>
 
+ <!-- 历史新闻列表 -->
+ <view wx:for="{{historyData}}" wx:key="*this">
+  <view class="date-style">{{filter.dateFilter(item.date)}}</view>
+  <view class="inner-container" wx:for="{{item.stories}}" wx:key="*this">
+    <view>
+     <view class="title">{{item.title}}</view>
+     <view class="author">{{item.hint}}</view>
+    </view>
+    <image  class="image-style" mode="aspectFill" src="{{item.images[0]}}"></image>
+  </view>
 </view>
+</view>
+</scroll-view>
