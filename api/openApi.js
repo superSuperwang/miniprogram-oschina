@@ -46,5 +46,21 @@ export default{
      method:'GET'
    })
    }) 
+  },
+
+  // 获取详情
+  getDetail(id){
+    return new Promise((resolve,reject)=>{
+      wx.request({
+     url: `${prefix}/4/news/${id}`,
+     success:(data)=>{
+       resolve(data)
+     },
+     fail:(error)=>{
+       reject(error)
+     },
+     method:'GET'
+   })
+   }) 
   }
 }

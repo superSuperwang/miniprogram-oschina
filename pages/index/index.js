@@ -14,8 +14,7 @@ Page({
   onLoad () {
     // 获取最新消息
     this.getLastData()
-    // 获取历史消息
-    this.getHistoryData()
+    
     // 获取固定高度
     const _this=this
     wx.getSystemInfo({
@@ -44,36 +43,57 @@ Page({
       swiperList:top_stories,
       listData:stories
     })
+    const idArr=this.data.swiperList.map((item)=>item.id)
+    this.data.listArr=this.data.listData.map((item)=>item.id)
+    // 将id存起来
+    wx.setStorageSync('top_stories', idArr)
+    wx.setStorageSync('stories', this.data.listArr)
+    // 获取历史消息
+    this.getHistoryData()
   },
 
   // 获取过往消息
-  async getHistoryData(){
-    const historyData=[]
+  async getHistoryData(newDate){
     const yesterday=new Date((new Date).getTime())
-    const {data}=await api.getHistory(dayjs(yesterday).format('YYYYMMDD'))
-    historyData.push(data)
-    this.setData({
-      historyData
+    const date=dayjs(yesterday).format('YYYYMMDD')
+    const {data}=await api.getHistory(newDate||date)
+    if(data.date===newDate){
+      return
+    }
+    data.stories.forEach((item)=>{
+      this.data.listArr.push(item.id)
     })
+    this.data.historyData.push(data)
+    this.setData({
+     historyData:this.data.historyData
+    })
+    
+    wx.setStorageSync('stories', this.data.listArr)
+    console.log(this.data.listArr)
   },
 
   // 上滑加载
   async pullUpLoad(){
    const arrLength=this.data.historyData.length
    const date=this.data.historyData[arrLength-1].date
-   const {data}=await api.getHistory(date)
-   if(data.date===date){
-     return
-   }
-   this.data.historyData.push(data)
-   this.setData({
-    historyData:this.data.historyData
-   })
+   this.getHistoryData(date)
+  //  const {data}=await api.getHistory(date)
+  //  if(data.date===date){
+  //    return
+  //  }
+  //  this.data.historyData.push(data)
+  //  this.setData({
+  //   historyData:this.data.historyData
+  //  })
   },
 
   // 查看详情
-  lookDetail(){
-
+  lookDetail(event){
+    const id=event.currentTarget.dataset.id
+    const flag=event.currentTarget.dataset.flag
+    wx.navigateTo({
+      url: `/pages/newsDetail/newsDetail?id=${id}&flag=${flag}`,
+    })
   }
 
 

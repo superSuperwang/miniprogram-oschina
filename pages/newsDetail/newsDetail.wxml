@@ -1,0 +1,20 @@
+<!--miniprogram/pages/newsDetail/newsDetail.wxml-->
+<view>
+ <swiper style="height:{{windowHeight}}px;" bindchange="itemTransition" current="{{idIndex}}">
+  <swiper-item wx:for="{{swiperList}}" wx:key="*this" class="swiper-item">
+   <view class="top-image">
+    <image mode="aspectFill" src="{{item.image}}"></image>
+    <view class="title">{{item.title}}</view>
+   </view>
+   <rich-text nodes="{{item.body}}"></rich-text>
+   <view class="footer-div"></view>
+  </swiper-item>
+ </swiper>
+<!-- 底部 -->
+ <view class="footer-container">
+  <van-icon name="chat-o" size="20px" color="#27282b"/>
+  <van-icon name="good-job-o" size="20px" color="#27282b"/>
+  <van-icon name="star-o" size="20px" color="#27282b"/>
+  <van-icon name="more-o" size="20px" color="#27282b"/>
+ </view>
+</view>

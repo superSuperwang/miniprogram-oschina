@@ -1,6 +1,9 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/newsDetail/newsDetail"
+    
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -9,34 +12,34 @@
     "navigationBarTitleText": "知乎专栏",
     "navigationBarTextStyle": "black"
   },
-  "tabBar":{
-    "color":"#999999",
-    "selectedColor":"#0078ff",
-    "borderStyle":"white",
-    "list":[
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#0078ff",
+    "borderStyle": "white",
+    "list": [
       {
-      "pagePath":"pages/index/index",
-      "text":"动态",
-      "iconPath":"./assets/images/home.png",
-      "selectedIconPath":"./assets/images/home-active.png"
+        "pagePath": "pages/index/index",
+        "text": "动态",
+        "iconPath": "./assets/images/home.png",
+        "selectedIconPath": "./assets/images/home-active.png"
       },
       {
-        "pagePath":"pages/index/index",
-        "text":"讨论",
-        "iconPath":"./assets/images/topic.png",
-        "selectedIconPath":"./assets/images/topic-active.png"
+        "pagePath": "pages/index/index",
+        "text": "讨论",
+        "iconPath": "./assets/images/topic.png",
+        "selectedIconPath": "./assets/images/topic-active.png"
       },
       {
-        "pagePath":"pages/index/index",
-        "text":"新闻",
-        "iconPath":"./assets/images/home.png",
-        "selectedIconPath":"./assets/images/home-active.png"
+        "pagePath": "pages/index/index",
+        "text": "新闻",
+        "iconPath": "./assets/images/home.png",
+        "selectedIconPath": "./assets/images/home-active.png"
       },
       {
-        "pagePath":"pages/index/index",
-        "text":"我的",
-        "iconPath":"./assets/images/home.png",
-        "selectedIconPath":"./assets/images/home-active.png"
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "./assets/images/home.png",
+        "selectedIconPath": "./assets/images/home-active.png"
       }
     ]
   },
