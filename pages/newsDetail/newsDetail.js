@@ -22,7 +22,8 @@ Page({
      wx.getSystemInfo({
        success: function(res) {
          _this.setData( {
-           windowHeight: res.windowHeight
+           windowHeight: res.windowHeight,
+           windowWidth:res.windowWidth
          })
        }
      })

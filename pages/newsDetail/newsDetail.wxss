@@ -12,6 +12,9 @@
   font-weight: bold;
   color:#ffffff;
 }
+.image-width{
+  width: 100%;
+}
 .content-wrap {
   overflow: hidden;
   background-color: #f9f9f9;
@@ -799,10 +802,10 @@ body.dudu-night,
   position: fixed;
   bottom: 0;
   width: calc(100% - 40px);
-  height: 40px;
+  height: 110rpx;
   padding: 0 20px;
   background-color: #F6F6F6;
 }
 .footer-div{
-  height: 40px;
+  height: 110rpx;
 }

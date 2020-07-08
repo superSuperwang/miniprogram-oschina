@@ -69,7 +69,6 @@ Page({
     })
     
     wx.setStorageSync('stories', this.data.listArr)
-    console.log(this.data.listArr)
   },
 
   // 上滑加载

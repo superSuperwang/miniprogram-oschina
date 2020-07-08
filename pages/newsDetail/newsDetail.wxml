@@ -1,9 +1,9 @@
 <!--miniprogram/pages/newsDetail/newsDetail.wxml-->
 <view>
- <swiper style="height:{{windowHeight}}px;" bindchange="itemTransition" current="{{idIndex}}">
+ <swiper style="height:{{windowHeight}}px;width:{{windowWidth}}px" bindchange="itemTransition" current="{{idIndex}}">
   <swiper-item wx:for="{{swiperList}}" wx:key="*this" class="swiper-item">
    <view class="top-image">
-    <image mode="aspectFill" src="{{item.image}}"></image>
+    <image mode="aspectFill" src="{{item.image}}" class="image-width"></image>
     <view class="title">{{item.title}}</view>
    </view>
    <rich-text nodes="{{item.body}}"></rich-text>

@@ -13,7 +13,7 @@
           data-flag="top_stories"
           bindtap="lookDetail"
           >
-            <image  mode="aspectFill" src="{{item.image}}"></image>
+            <image  mode="aspectFill" src="{{item.image}}" class="img-width"></image>
             <view class="swiper-title">
              <view class="title">{{item.title}}</view>
              <view class="author">{{item.hint}}</view>
@@ -39,13 +39,16 @@
  <!-- 历史新闻列表 -->
  <view 
  wx:for="{{historyData}}" 
- wx:key="*this"
- data-id="{{item.id}}"
- data-flag="stories"
- bindtap="lookDetail"
+ wx:key="*this" 
  >
   <view class="date-style">{{filter.dateFilter(item.date)}}</view>
-  <view class="inner-container" wx:for="{{item.stories}}" wx:key="*this">
+  <view 
+  class="inner-container" 
+  wx:for="{{item.stories}}" 
+  wx:key="*this"data-id="{{item.id}}"
+  data-flag="stories"
+  bindtap="lookDetail"
+  >
     <view>
      <view class="title">{{item.title}}</view>
      <view class="author">{{item.hint}}</view>
