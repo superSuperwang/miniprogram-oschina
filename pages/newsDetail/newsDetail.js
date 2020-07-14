@@ -8,13 +8,14 @@ Page({
    */
   data: {
     swiperList:[], // 文章
+    extraDetail:{},
     idIndex:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function () {
      // 获取详情
      this.getDetail()
      // 获取固定高度
@@ -47,6 +48,21 @@ Page({
     this.setData({
       swiperList:this.data.swiperList
     })
+    this.getExtra(id)
+  },
+
+  // 获取新闻额外信息
+  async getExtra(id){
+    const {data:{comments,long_comments,popularity,short_comments}}=await api.getExtra(id||this.options.id)
+    this.setData({
+      extraDetail:{
+        comments,
+        long_comments,
+        popularity,
+        short_comments
+      }
+    })
+    console.log(this.data.extraDetail)
   },
 
   // 滑动触发
@@ -57,6 +73,8 @@ Page({
     // console.log(event.detail.current,this.data.swiperList)
     if(typeof this.data.swiperList[event.detail.current]==='number'){
         this.getDetail(this.data.swiperList[event.detail.current])
+    }else{
+      this.getExtra(this.data.swiperList[event.detail.current].id)
     }
   
   }

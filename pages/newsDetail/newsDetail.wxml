@@ -12,9 +12,19 @@
  </swiper>
 <!-- 底部 -->
  <view class="footer-container">
-  <van-icon name="chat-o" size="20px" color="#27282b"/>
-  <van-icon name="good-job-o" size="20px" color="#27282b"/>
-  <van-icon name="star-o" size="20px" color="#27282b"/>
-  <van-icon name="more-o" size="20px" color="#27282b"/>
+   <view class="comments-container">
+     <van-icon name="chat-o" size="20px" color="#27282b"/>
+     {{extraDetail.comments}}
+   </view>
+   <view class="comments-container">
+     <van-icon name="good-job-o" size="20px" color="#27282b"/>
+     {{extraDetail.popularity}}
+   </view>
+   <view class="comments-container">
+     <van-icon name="star-o" size="20px" color="#27282b"/>
+   </view>
+   <view class="comments-container">
+     <van-icon name="more-o" size="20px" color="#27282b"/>
+   </view>
  </view>
 </view>

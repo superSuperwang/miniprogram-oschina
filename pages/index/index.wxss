@@ -26,6 +26,7 @@ page{
   bottom: 20px;
 }
 .swiper-title .title{
+ 
   margin-bottom: 5px;
   font-weight: bold;
   color:#ffffff;
@@ -47,11 +48,14 @@ page{
   border-radius: 6px;
   padding: 5px;
 }
+.inner-container .title-container{
+  width: 80%;
+}
 .inner-container .title{
   font-size: 16px;
   margin-bottom: 5px;
   font-weight: bold;
-  color:#333333;
+  color:#333333; 
 }
 .inner-container .author{
   color:#999999;

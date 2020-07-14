@@ -62,5 +62,22 @@ export default{
      method:'GET'
    })
    }) 
+  },
+
+  // 获取新闻额外信息
+  getExtra(id){
+    return new Promise((resolve,reject)=>{
+      wx.request({
+     url: `${prefix}/4/story-extra/${id}`,
+     success:(data)=>{
+       resolve(data)
+     },
+     fail:(error)=>{
+       reject(error)
+     },
+     method:'GET'
+   })
+   }) 
   }
+ 
 }

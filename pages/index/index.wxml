@@ -29,7 +29,7 @@
  data-flag="stories"
  bindtap="lookDetail"
  >
-   <view>
+   <view class="title-container">
     <view class="title">{{item.title}}</view>
     <view class="author">{{item.hint}}</view>
    </view>
@@ -49,7 +49,7 @@
   data-flag="stories"
   bindtap="lookDetail"
   >
-    <view>
+    <view class="title-container">
      <view class="title">{{item.title}}</view>
      <view class="author">{{item.hint}}</view>
     </view>
